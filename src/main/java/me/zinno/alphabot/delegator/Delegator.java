@@ -1,31 +1,35 @@
 package me.zinno.alphabot.delegator;
 
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class Delegator<T, U> {
 
-    private List<T> registeredDelegatees = new LinkedList<>();
+    private List<T> registeredDelegatees;
 
-    public Delegator() {}
+    public Delegator() {
+        this(Collections.emptyList());
+    }
 
     public Delegator(List<T> delegatees) {
         this.registeredDelegatees = delegatees;
     }
 
-    public abstract T fetch(U data);
+    public abstract T fetchMax(U data);
 
-    public void registerDelegatee(T... delegatees) {
-        Arrays.stream(delegatees).forEach(registeredDelegatees::add);
+    public abstract List<T> sort(U data);
+
+    public List<T> getRegisteredDelegatees() {
+        return registeredDelegatees;
+    }
+
+    public final Delegator<T, U> registerDelegatee(T delegatees) {
+        registeredDelegatees.add(delegatees);
+        return this;
     }
 
     public void setRegisteredDelegatees(List<T> registeredDelegatees) {
         this.registeredDelegatees = registeredDelegatees;
-    }
-
-    public List<T> getRegisteredDelegatees() {
-        return registeredDelegatees;
     }
 
 }

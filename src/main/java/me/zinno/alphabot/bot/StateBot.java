@@ -1,14 +1,14 @@
 package me.zinno.alphabot.bot;
 
-import me.zinno.alphabot.data.DataNode;
-import me.zinno.alphabot.delegator.ManipulatableDelegator;
 import me.zinno.alphabot.data.Data;
-import me.zinno.alphabot.data.controller.ControlsOutput;
+import me.zinno.alphabot.data.bank.controller.ControlsOutput;
+import me.zinno.alphabot.data.node.DataNode;
+import me.zinno.alphabot.delegator.ManipulatableDelegator;
 import rlbot.Bot;
 import rlbot.ControllerState;
 import rlbot.flat.GameTickPacket;
 
-public abstract class StateBot<U extends DataNode> implements Bot {
+public abstract class StateBot<U extends DataNode<? extends ControllerState>> implements Bot {
 
     private final int playerIndex;
 
@@ -37,7 +37,7 @@ public abstract class StateBot<U extends DataNode> implements Bot {
 
         data.update(packet);
 
-        return stateDelegator.fetch(data.getNode()).manipulate(data.getNode()).controllerState;
+        return stateDelegator.fetchMax(data.getNode()).manipulate(data.getNode()).controllerState;
     }
 
 }

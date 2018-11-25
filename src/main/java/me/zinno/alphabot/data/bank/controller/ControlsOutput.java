@@ -1,4 +1,4 @@
-package me.zinno.alphabot.data.controller;
+package me.zinno.alphabot.data.bank.controller;
 
 import rlbot.ControllerState;
 

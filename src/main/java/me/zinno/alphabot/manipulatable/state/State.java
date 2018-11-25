@@ -1,6 +1,6 @@
 package me.zinno.alphabot.manipulatable.state;
 
-import me.zinno.alphabot.data.DataNode;
+import me.zinno.alphabot.data.node.DataNode;
 import me.zinno.alphabot.delegator.ManipulatableDelegator;
 import me.zinno.alphabot.manipulatable.Manipulatable;
 

@@ -1,6 +1,6 @@
 package me.zinno.alphabot.manipulatable.state.aatba;
 
-import me.zinno.alphabot.data.SampleDataNode;
+import me.zinno.alphabot.data.node.SampleDataNode;
 import me.zinno.alphabot.delegator.ManipulatableDelegator;
 import me.zinno.alphabot.manipulatable.controller.boost.AlwaysBoostController;
 import me.zinno.alphabot.manipulatable.state.State;
@@ -25,12 +25,12 @@ public class Aatba extends State<SampleDataNode> {
     }
 
     @Override
-    public float getAvailability(SampleDataNode data) {
+    public double getAvailability(SampleDataNode data) {
         return 0;
     }
 
     @Override
     public SampleDataNode manipulate(SampleDataNode data) {
-        return null;
+        return data;
     }
 }

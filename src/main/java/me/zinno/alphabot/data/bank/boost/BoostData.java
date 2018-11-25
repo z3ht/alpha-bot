@@ -1,6 +1,5 @@
-package me.zinno.alphabot.data.boost;
+package me.zinno.alphabot.data.bank.boost;
 
-import me.zinno.alphabot.data.Updatable;
 import me.zinno.alphabot.util.vector.Vector3;
 import rlbot.cppinterop.RLBotDll;
 import rlbot.flat.BoostPadState;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
  * This class is here for your convenience, it is NOT part of the framework. You can change it as much
  * as you want, or delete it.
  */
-public class BoostData implements Updatable<GameTickPacket> {
+public class BoostData {
 
     private final ArrayList<BoostPad> orderedBoosts = new ArrayList<>();
 

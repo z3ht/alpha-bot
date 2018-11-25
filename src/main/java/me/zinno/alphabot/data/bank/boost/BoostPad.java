@@ -1,4 +1,4 @@
-package me.zinno.alphabot.data.boost;
+package me.zinno.alphabot.data.bank.boost;
 
 import me.zinno.alphabot.util.vector.Vector3;
 
